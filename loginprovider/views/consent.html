@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Consent</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,600&display=swap');
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Raleway', sans-serif;
+    }
+
+    #consent_form {
+        height: 150px;
+        padding: 8px;
+        width: 450px;
+        position: absolute;
+        margin: auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 2px solid #555;
+        border-radius: 5px;
+
+    }
+</style>
+<body onload="loadSelectionOptions()">
+<script>
+    function loadSelectionOptions() {
+        var scopes = {{.scopes}}
+        var consent_form = document.getElementById("consent_form")
+        var br = document.createElement("br");
+        /* for (i = length; i > 0; i--) {
+             consent_form.options[i] = null;
+         }*/
+
+        for (var element of scopes) {
+            var container = document.createElement("div")
+            var label = document.createTextNode(" " + element)
+            var input = document.createElement("input")
+            input.setAttribute("type", "checkbox")
+            input.setAttribute("name", element)
+            container.appendChild(input)
+            container.appendChild(label)
+            consent_form.appendChild(container)
+        }
+
+        var submitContainer = document.createElement("div")
+        var submitInput = document.createElement("input")
+        submitInput.setAttribute("type", "submit")
+        submitInput.setAttribute("value", "I consent!")
+        submitContainer.appendChild(submitInput)
+        consent_form.appendChild(submitContainer)
+
+
+    }
+</script>
+    <form id="consent_form" method="post" action="/consentResponse">Application {{.application}} asks for your consent to following items:
+        <input type="hidden" name="consent_challenge" value="{{.challenge}}"/>
+    </form>
+</body>
+</html>

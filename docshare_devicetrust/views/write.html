@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Document</title>
+</head>
+<body>
+<div class="page">
+    <form class="search-form" action="/writeRequest" method="post" enctype="multipart/form-data">>
+        <h3>Neues Dokument anlegen/überschreiben</h3>
+        <input type="text" classname="docid" placeholder="ID des Dokuments" name="id">
+        <select name="scope" required>
+            <option value="internal">Intern</option>
+            <option value="external">Extern</option>
+            <option value="customer">Kunde</option>
+        </select>
+        <input name="document" type="file" size="5000" accept=".pdf">
+        <input type="submit" value="Anlegen"/>
+    </form>
+</div>
+</body>
+</html>

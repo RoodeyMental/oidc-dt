@@ -1,0 +1,113 @@
+ @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,600&display=swap');
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'Raleway', sans-serif;
+ }
+
+.page {
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 200px;
+  padding: 3px;
+}
+
+
+.login-form {
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.login-form img {
+    display: block;
+    margin: 0 auto;
+}
+
+.login-form h3 {
+  text-align: center;
+  display: block;
+  margin-bottom: 20px;
+  color: #424140;
+}
+
+.login-form p {
+  text-align: center;
+  display: block;
+  margin-bottom: 40px;
+  color: #424140;
+}
+
+.login-form input {
+  text-align: center;
+  display: block;
+  margin: 0px auto;
+  color: #000000;
+  font-size: 14px;
+  border: 1px solid;
+  height: 35px;
+  border-radius: 5px;
+  border-color: #878583;
+  width: 100%;
+}
+
+
+.login-form input[type="submit"]  {
+  margin-top: 30px;
+  color: white;
+  background-color: #2541cc;
+}
+.login-form input:hover[type="submit"]  {
+  background-color: #2f50f5;
+}
+
+.login-form input:focus {
+    border-color: black;
+}
+
+
+.login-form input:focus ~ .floating-label,
+.login-form input:not(:focus):valid ~ .floating-label {
+  bottom: 42px;
+  right: 0px;
+  font-size: 11px;
+  width: 170px;
+  opacity: 1;
+}
+
+.login-form .inputText {
+  width: 200px;
+  height: 35px;
+}
+
+.login-form input:focus::placeholder {
+  color: transparent;
+}
+
+
+.login-form .floating-label {
+  position: relative;
+  pointer-events: none;
+  bottom: 26px;
+  background-color: white;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 230px;
+  transition: 0.2s ease all;
+  font-size: 14px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: black;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: black;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: black;
+}

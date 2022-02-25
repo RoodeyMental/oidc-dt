@@ -1,0 +1,15 @@
+database:
+  host: "localhost"
+  driverytpe: "mysql"
+  port: 3306
+  username: "root"
+  password: "123456"
+  schema: "idp_accounts"
+
+opa:
+  host: "opa.local"
+  port: 8181
+
+hydra:
+  host: "localhost"
+  port: 4445

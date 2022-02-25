@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Login</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,600&display=swap');
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Raleway', sans-serif;
+    }
+
+    #login_form {
+        height: 100px;
+        padding: 8px;
+        width: 320px;
+        position: absolute;
+        margin: auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 2px solid #555;
+        border-radius: 5px;
+
+    }
+</style>
+<body>
+<form id="login_form" method="post" action="/adminLoginRequest">
+    <table style="width:100%;">
+        <tr>
+            <td>Username</td>
+            <td><input name="login"></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="password" name="password"></td>
+        </tr>
+        <tr>
+            <td style="text-align: center;padding-top: 7px;" colspan="1">
+                <input type="submit" value="Sign In"/>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

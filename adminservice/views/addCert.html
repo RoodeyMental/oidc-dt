@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Client Certificate for User</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,600&display=swap');
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Raleway', sans-serif;
+    }
+
+    #login_form {
+        height: 120px;
+        padding: 8px;
+        width: 320px;
+        position: absolute;
+        margin: auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 2px solid #555;
+        border-radius: 5px;
+
+    }
+</style>
+<body onload="loadSelectionOptions()">
+<script>
+    function loadSelectionOptions() {
+        var usernames = {{.usernames}}
+
+        var selection = document.getElementById("username-selection")
+        var length = selection.options.length;
+
+
+        for (i = length; i > 0; i--) {
+            selection.options[i] = null;
+        }
+
+        for (var element of usernames) {
+            var opt = document.createElement("option")
+            opt.appendChild(document.createTextNode(element))
+            opt.value = element
+            selection.appendChild(opt)
+        }
+    }
+</script>
+<form action="/addClientCertRequest" id="login_form" method="post" enctype="multipart/form-data">
+    <table style="width:50%;">
+        <tr>
+            <td>Username:</td>
+            <td>
+                <select name="username" id="username-selection">
+                    <option id = "item" style="text-align:center">- username -</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Certificate File:</td>
+            <td>
+                <input name="certfile" type="file" size="50" accept=".crt">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;padding-top: 10px;">
+                <input type="submit" value="Add Certificate"/>
+            </td>
+        </tr>
+    </table>
+</form>
+
+
+</body>
+
+</html>

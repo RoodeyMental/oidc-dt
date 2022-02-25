@@ -1,0 +1,10 @@
+[NewRequest]
+Subject = "CN=Device-889LTF2" 
+Keylength = 2048 
+Exportable = FALSE
+MachineKeySet = FALSE
+ProviderName = "Microsoft Platform Crypto Provider"
+ProviderType = 1
+RequestType = PKCS10
+KeyUsage = 0xB0 ; this is a https client certificate, can change when signing
+FriendlyName = "My super secure certificate"

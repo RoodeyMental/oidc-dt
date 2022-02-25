@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+        <link rel='stylesheet' href='../static/styles.css'/>
+  </head>
+  <body>
+    <div class="page">
+      <form class="login-form" method="post" action="/loginResponse">
+        <img src="../static/logo.png" alt="logo">
+        <h3>Anmeldung</h3>
+        <p>Bitte melden Sie sich mit ihrem Konto an.</p>
+        <input type="text" classname="inputText" name="login">
+        <span class="floating-label">E-Mail Adresse oder Username</span>
+        <input type="password" placeholder="Passwort" name="password">
+        <input type="hidden" name="loginChallenge" value="{{.challenge}}"/>
+        <input type="submit" value="Login"/>
+      </form>
+    </div>
+  </body>
+</html>
